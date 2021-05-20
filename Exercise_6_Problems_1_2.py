@@ -11,13 +11,15 @@
 #     - Skip the second row
 #     - Convert the no-data values (`-9999`) into `NaN`
 
+
+
 import pandas as pd
 import numpy as np
 
 data = None
 
 # YOUR CODE HERE 1
-
+data = pd.read_csv("data/1091402.txt",skiprows=2)
 # ### Part 2 
 # 
 # In this section, you will calculate simple statistics based on the input data:
@@ -28,6 +30,7 @@ data = None
 tavg_nodata_count = None
 #YOUR CODE HERE 2
 
+tavg_nodata_count=len.TAVG
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
