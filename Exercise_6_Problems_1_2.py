@@ -29,7 +29,6 @@ data = pd.read_csv("data/1091402.txt",skiprows=2)
 
 tavg_nodata_count = None
 #YOUR CODE HERE 2
-
 tavg_nodata_count=len.TAVG
 
 #CAUTION!!! DON'T EDIT THIS PART START
