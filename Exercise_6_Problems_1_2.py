@@ -19,7 +19,9 @@ import numpy as np
 data = None
 
 # YOUR CODE HERE 1
-data = pd.read_csv("data/1091402.txt",skiprows=2)
+#read data file 
+data = pd.read_csv("data/1091402.txt",skiprows=2,na_values=['-9999'])
+
 # ### Part 2 
 # 
 # In this section, you will calculate simple statistics based on the input data:
@@ -29,7 +31,7 @@ data = pd.read_csv("data/1091402.txt",skiprows=2)
 
 tavg_nodata_count = None
 #YOUR CODE HERE 2
-tavg_nodata_count=len.TAVG
+tavg_nodata_count=data['TAVG'].len()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -42,7 +44,7 @@ print('Number of no-data values in column "TAVG":',tavg_nodata_count)
 
 tmin_nodata_count = None
 #YOUR CODE HERE 3
-tmin_nodata_count=len.TMIN
+tmin_nodata_count=data['TMIN'].len()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
