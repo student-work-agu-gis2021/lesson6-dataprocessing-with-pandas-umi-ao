@@ -22,16 +22,14 @@ data = None
 #read data file 
 data = pd.read_table("data/1091402.txt",sep='\s+',na_values='-9999')
 data = data.drop(0)
-print(data)
 print(data.head)
-print(data.tail())
+print(data.tail)
 # ### Part 2 
 # 
 # In this section, you will calculate simple statistics based on the input data:
 # 
 # - Calculate how many no-data (NaN) values there are in the `TAVG` column
 #     - Assign your answer to a variable called `tavg_nodata_count`.
-print (data.columns.values)
 tavg_nodata_count = None
 #YOUR CODE HERE 2
 
@@ -62,7 +60,7 @@ print('Number of no-data values in column "TMIN":', tmin_nodata_count)
 
 day_count = None 
 #YOUR CODE HERE 4
-day_count = data['DATE']
+day_count = data['DATE'].len()
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print("Number of days:", day_count)
