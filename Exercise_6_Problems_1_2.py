@@ -33,7 +33,7 @@ print(data.tail)
 tavg_nodata_count = None
 #YOUR CODE HERE 2
 
-tavg_nodata_count = data['TAVG'].isna()
+tavg_nodata_count = data['TAVG'].isnull().sum()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -47,7 +47,7 @@ print('Number of no-data values in column "TAVG":',tavg_nodata_count)
 tmin_nodata_count = None
 #YOUR CODE HERE 3
 
-tmin_nodata_count = data["TMIN"].isna()
+tmin_nodata_count = data["TMIN"].isnull().sum()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
