@@ -20,15 +20,18 @@ data = None
 
 # YOUR CODE HERE 1
 #read data file 
-data = pd.read_csv("data/1091402.txt",skiprows=2,na_values=['-9999'])
-
+data = pd.read_table("data/1091402.txt",sep='\s+',na_values='-9999')
+data = data.drop(0)
+print(data)
+print(data.head)
+print(data.tail())
 # ### Part 2 
 # 
 # In this section, you will calculate simple statistics based on the input data:
 # 
 # - Calculate how many no-data (NaN) values there are in the `TAVG` column
 #     - Assign your answer to a variable called `tavg_nodata_count`.
-
+print (data.columns.values)
 tavg_nodata_count = None
 #YOUR CODE HERE 2
 
@@ -46,7 +49,7 @@ print('Number of no-data values in column "TAVG":',tavg_nodata_count)
 tmin_nodata_count = None
 #YOUR CODE HERE 3
 
-tmin_nodata_count = data['TMIN'].isna()
+tmin_nodata_count = data["TMIN"].isna()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -59,7 +62,7 @@ print('Number of no-data values in column "TMIN":', tmin_nodata_count)
 
 day_count = None 
 #YOUR CODE HERE 4
-day_count=len.DATE
+day_count = data['DATE']
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print("Number of days:", day_count)
@@ -72,7 +75,9 @@ print("Number of days:", day_count)
 first_obs = None
  
 # YOUR CODE HERE 5
-first_obs = data['DATE'].min
+
+first_obs = data['DATE'].min()
+
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print('Date of the first observation:',first_obs)
@@ -84,7 +89,8 @@ print('Date of the first observation:',first_obs)
 last_obs = None
 
 # YOUR CODE HERE 6
-first_obs = data['DATE'].max
+last_obs = data['DATE'].max(skipna=True)
+
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print('Date of the last observation:', last_obs)
@@ -97,7 +103,8 @@ print('Date of the last observation:', last_obs)
 avg_temp = None
 
 # YOUR CODE HERE 7
-avg_temp = data['TAVG'].mean
+avg_temp = data['TAVG'].astype(float).mean()
+
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print('Average temperature (F) for the whole dataset:', round(avg_temp, 2))
@@ -110,6 +117,8 @@ print('Average temperature (F) for the whole dataset:', round(avg_temp, 2))
 avg_temp_1969 = None
 
 # YOUR CODE HERE 8
+avg_temp_1969_data = data[(data['DATE'].astype(int)<19690900) & (data['DATE'].astype(int) > 19690430)]
+avg_temp_1969 = avg_temp_1969_data['TMAX'].astype(int).mean()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # This test print should print a number
