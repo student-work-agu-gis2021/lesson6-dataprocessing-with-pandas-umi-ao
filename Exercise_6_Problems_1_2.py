@@ -46,8 +46,8 @@ print('Number of no-data values in column "TAVG":',tavg_nodata_count)
 
 tmin_nodata_count = None
 #YOUR CODE HERE 3
-
-tmin_nodata_count = data["TMIN"].isnull().sum()
+#count NaN values there are in the 'TMIN' colum
+tmin_nodata_count = data['TMIN'].isnull().sum()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
