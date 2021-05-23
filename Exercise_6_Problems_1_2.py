@@ -32,7 +32,7 @@ data = data.drop(0)
 #     - Assign your answer to a variable called `tavg_nodata_count`.
 tavg_nodata_count = None
 #YOUR CODE HERE 2
-
+#count NaN values there are in the 'TAVG' colum
 tavg_nodata_count = data['TAVG'].isnull().sum()
 
 #CAUTION!!! DON'T EDIT THIS PART START
