@@ -135,6 +135,7 @@ print('Average temperature (F) for the Summer of 69:', round(avg_temp_1969, 2))
 monthly_data = None
 
 # YOUR CODE HERE 9
+#set monthly_deta
 monthly_data = pd.DataFrame()
 data['celsius'] = data['TAVG'].astype(float)
 data['celsius'] -= 32
