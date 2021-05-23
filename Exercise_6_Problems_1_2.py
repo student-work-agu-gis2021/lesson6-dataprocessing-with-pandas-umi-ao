@@ -22,8 +22,7 @@ data = None
 #read data file 
 data = pd.read_table("data/1091402.txt",sep='\s+',na_values='-9999')
 data = data.drop(0)
-print(data.head)
-print(data.tail)
+
 # ### Part 2 
 # 
 # In this section, you will calculate simple statistics based on the input data:
@@ -130,6 +129,18 @@ print('Average temperature (F) for the Summer of 69:', round(avg_temp_1969, 2))
 monthly_data = None
 
 # YOUR CODE HERE 9
+monthly_data = pd.DataFrame()
+data['celsius'] = data['TAVG'].astype(float)
+data['celsius'] -= 32
+data['celsius'] /= 1.8
+
+
+data["DATA_Month"] = data["DATE"].str.slice(start = 0, stop = 6)
+grouped = data.groupby("DATA_Month")
+
+data1 = grouped.mean()
+
+monthly_data['temp_celsius'] = data1['celsius']
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # This test print should print the length of variable monthly_data
