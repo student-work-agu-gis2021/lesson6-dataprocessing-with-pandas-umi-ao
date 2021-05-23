@@ -21,6 +21,7 @@ data = None
 # YOUR CODE HERE 1
 #read data file 
 data = pd.read_table("data/1091402.txt",sep='\s+',na_values='-9999')
+#skip the second row
 data = data.drop(0)
 
 # ### Part 2 
