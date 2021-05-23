@@ -74,7 +74,7 @@ print("Number of days:", day_count)
 first_obs = None
  
 # YOUR CODE HERE 5
-
+#finding the date of the oldest observation
 first_obs = data['DATE'].min()
 
 #CAUTION!!! DON'T EDIT THIS PART START
@@ -88,6 +88,7 @@ print('Date of the first observation:',first_obs)
 last_obs = None
 
 # YOUR CODE HERE 6
+#finding the date of the most recent observation
 last_obs = data['DATE'].max(skipna=True)
 
 #CAUTION!!! DON'T EDIT THIS PART START
