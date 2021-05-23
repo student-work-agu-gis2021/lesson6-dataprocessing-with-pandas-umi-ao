@@ -103,6 +103,7 @@ print('Date of the last observation:', last_obs)
 avg_temp = None
 
 # YOUR CODE HERE 7
+#make avg_temp that is the average temperature for the whole data file (all observtions) from column `TAVG`
 avg_temp = data['TAVG'].astype(float).mean()
 
 #CAUTION!!! DON'T EDIT THIS PART START
