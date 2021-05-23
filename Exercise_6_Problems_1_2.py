@@ -118,7 +118,9 @@ print('Average temperature (F) for the whole dataset:', round(avg_temp, 2))
 avg_temp_1969 = None
 
 # YOUR CODE HERE 8
+#finding the Summer of 1969 data
 avg_temp_1969_data = data[(data['DATE'].astype(int)<19690900) & (data['DATE'].astype(int) > 19690430)]
+#calucurare the average `TMAX` temperature over the Summer of 1969
 avg_temp_1969 = avg_temp_1969_data['TMAX'].astype(int).mean()
 
 #CAUTION!!! DON'T EDIT THIS PART START
